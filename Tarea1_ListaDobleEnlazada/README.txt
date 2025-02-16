@@ -14,5 +14,17 @@ Edilson García 	--> 	100%
 ***** IMPORTANTE ****
 El codigo al ejecutarlo nos muestra un menú desde el cual podemos añadir datos al inicio o al final de la lista, o eliminar datos.
 También nos permite visualizar la lista en consola o bien, en un gráfico de graphviz.
-Este ultimo, al seleccionar su opcion, lo abre automaticamente gracias a dos librerias nativas de python, no obstante, el mismo se 
+El menu tiene esta apariencia:
+
+Opciones:
+1. Agregar al inicio
+2. Agregar al final
+3. Imprimir lista
+4. Eliminar por carnet
+5. Generar gráfico
+6. Salir
+Elige una opción: 
+
+
+La opción de generar gráfico, lo abre automaticamente gracias a dos librerias nativas de python, no obstante, el mismo se 
 guardará en la misma carpeta donde este alojado el proyecto.
