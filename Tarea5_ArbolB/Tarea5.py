@@ -188,7 +188,7 @@ def generar_y_mostrar_graphviz(arbol, nombre='arbol_b'):
     abrir_imagen(archivo_png)
 
 def agregar_nodos(dot, nodo, id_padre=None):
-    if nodo and nodo.claves:  # NO mostrar nodos vacíos
+    if nodo and nodo.claves: 
         id_nodo = str(id(nodo))
         label = '|'.join(str(k) for k in nodo.claves)
         dot.node(id_nodo, label)
