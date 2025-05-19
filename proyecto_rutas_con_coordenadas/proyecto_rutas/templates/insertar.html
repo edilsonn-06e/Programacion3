@@ -1,0 +1,40 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<h2>Insertar Lugar Turístico</h2>
+<form method="POST" class="row g-3">
+    <div class="col-md-6">
+        <label>Nombre</label>
+        <input type="text" name="nombre" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+        <label>Departamento</label>
+        <input type="text" name="departamento" class="form-control" required>
+    </div>
+    <div class="col-md-4">
+        <label>Calificación (1-5)</label>
+        <input type="number" name="calificacion" step="0.1" class="form-control" required>
+    </div>
+    <div class="col-md-4">
+        <label>Costo (Q)</label>
+        <input type="number" name="costo" step="0.1" class="form-control" required>
+    </div>
+    <div class="col-md-4">
+        <label>Tiempo (hrs)</label>
+        <input type="number" name="tiempo" step="0.1" class="form-control" required>
+    </div>
+    
+    <div class="col-md-6">
+        <label>Latitud</label>
+        <input type="number" name="latitud" step="0.000001" class="form-control" required>
+    </div>
+    <div class="col-md-6">
+        <label>Longitud</label>
+        <input type="number" name="longitud" step="0.000001" class="form-control" required>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-success">Insertar</button>
+    </div>
+</form>
+{% endblock %}

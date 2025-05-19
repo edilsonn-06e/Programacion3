@@ -1,0 +1,11 @@
+origen,destino,distancia,tiempo
+Lago Verde,Parque del Jaguar,80,1.5
+Parque del Jaguar,EcoParque Itzá,45,1.2
+Lago Verde,Mirador del Sol,70,1.6
+Cascada Azul,Río Claro,30,0.8
+Montaña Cristal,Cerro del Viento,60,1.7
+Cerro del Viento,Sendero del Puma,50,1.4
+Grutas de la Luna,Mirador del Sol,40,1.1
+Laguna Misteriosa,Valle Florido,35,0.9
+Bosque Encantado,Cerro del Viento,55,1.3
+EcoParque Itzá,Grutas de la Luna,90,2.2

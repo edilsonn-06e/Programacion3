@@ -1,0 +1,43 @@
+:root {
+  --primario: #FFB200;
+  --secundario: #EB5B00;
+  --acento: #D91656;
+  --oscuro: #640D5F;
+}
+
+body {
+  background-color: #fff8f0;
+  color: #222;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: var(--primario);
+  border-color: var(--primario);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--secundario);
+  border-color: var(--secundario);
+}
+
+.btn-outline-primary {
+  border-color: var(--acento);
+  color: var(--acento);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--acento);
+  color: white;
+}
+
+/* Navbar */
+.navbar-dark.bg-dark {
+  background-color: var(--oscuro) !important;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  color: var(--acento);
+}
