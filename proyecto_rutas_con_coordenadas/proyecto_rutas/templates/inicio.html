@@ -1,121 +1,163 @@
 
-{% extends "layout.html" %}
-{% block content %}
-<h2 class="mb-4">Buscar Rutas Recomendadas</h2>
-
-<form method="POST" action="/recomendar" class="row g-3 mb-4">
-    <div class="col-md-4">
-        <label class="form-label">Lugar de partida</label>
-        <input type="text" name="origen" class="form-control" required>
-    </div>
-    <div class="col-md-4">
-        <label class="form-label">Presupuesto (Q)</label>
-        <input type="number" step="0.01" name="presupuesto" class="form-control" required>
-    </div>
-    <div class="col-md-4">
-        <label class="form-label">Horas disponibles</label>
-        <input type="number" step="0.1" name="horas" class="form-control" required>
-    </div>
-    <div class="col-12 text-end">
-        <button type="submit" class="btn btn-primary px-4">Buscar</button>
-    </div>
-</form>
-
-
-<h3 class="mb-3">Filtrar por Departamento</h3>
-<form method="GET" action="/" class="row g-3 align-items-end mb-4">
-    <div class="col-md-6">
-        <label class="form-label">Departamento</label>
-        <select name="departamento" class="form-select">
-            {% for depto in departamentos %}
-            <option value="{{ depto }}">{{ depto }}</option>
-            {% endfor %}
-        </select>
-    </div>
-    <div class="col-md-6 text-end">
-        <button type="submit" class="btn btn-secondary px-4">Filtrar</button>
-    </div>
-</form>
-
-<h3 class="mb-3">Lugares sugeridos</h3>
-<ul class="list-group mb-4">
-    {% for l in lugares %}
-        <li class="list-group-item">
-            <strong>{{ l.nombre }}</strong> ({{ l.departamento }})<br>
-            Q{{ l.costo }} – {{ l.tiempo }} hrs – Calificación: {{ l.calificacion }}/5
-        </li>
-    {% endfor %}
-</ul>
-
-{% if rutas %}
-    <h3 class="mb-3">Rutas sugeridas</h3>
-    <ul class="list-group mb-4">
-        {% for i in range(rutas|length) %}
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            {{ rutas[i]|join(" → ") }}
-            <form action="/mostrar_ruta" method="GET" class="mb-0">
-                <input type="hidden" name="ruta_id" value="{{ i }}">
-                <button type="submit" class="btn btn-outline-primary btn-sm">
-                    Ver Ruta {{ i + 1 }}
-                </button>
-            </form>
-        </li>
-        {% endfor %}
-    </ul>
-{% endif %}
-
-
-<h3 class="mb-3">Mapa</h3>
-<div class="border rounded shadow-sm overflow-hidden mb-4" style="height: 500px;">
-    <iframe src="{{ url_for('static', filename='mapa.html') }}" width="100%" height="100%" style="border:0;"></iframe>
-</div>
-
-<div class="modal fade" id="modalCalificacion" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <form method="POST" action="/calificar" class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalLabel">Calificar lugar</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" name="nombre" id="lugarNombre">
-
-        <label for="calificacion" class="form-label">Tu calificación (1 a 5):</label>
-        <input type="number" name="calificacion" min="1" max="5" step="0.5" required class="form-control mb-3">
-
-        <label for="comentario" class="form-label">Comentario (opcional):</label>
-        <textarea name="comentario" id="comentario" class="form-control" rows="3" placeholder="¿Qué te pareció este lugar?"></textarea>
-
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Enviar</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script>
-  function abrirCalificacion(nombre) {
-    const inputNombre = document.getElementById("lugarNombre");
-    inputNombre.value = nombre;
-
-    const modal = new bootstrap.Modal(document.getElementById('modalCalificacion'));
-    modal.show();
-  }
-</script>
-
-{% if calificar %}
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const inputNombre = document.getElementById("lugarNombre");
-    inputNombre.value = "{{ calificar }}";
-
-    const modal = new bootstrap.Modal(document.getElementById('modalCalificacion'));
-    modal.show();
-  });
-</script>
-{% endif %}
+from flask import Flask, render_template, request, redirect, send_file
+import os
+from arbol_b import ArbolB, Lugar
+from utils.generador_mapa import generar_mapa
+from utils.parser_csv import cargar_csv, exportar_csv, cargar_conexiones
+from utils.serializador import guardar_arbol, cargar_arbol, guardar_grafo, cargar_grafo
+from recomendador import recomendar_rutas
 
 
 
-{% endblock %}
+from grafo import Grafo
+
+#grafo = Grafo()
+ARCHIVO_ARBOL = os.path.join(os.path.dirname(__file__), "datos", "arbol_guardado.pkl")
+ARCHIVO_GRAFO = os.path.join(os.path.dirname(__file__), "datos", "grafo_guardado.pkl")
+arbol = cargar_arbol(ARCHIVO_ARBOL) or ArbolB(3)
+grafo = cargar_grafo(ARCHIVO_GRAFO) or Grafo()
+rutas = []
+
+
+
+
+app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = os.path.join(os.path.dirname(__file__), 'datos')
+
+#arbol = ArbolB(3)  # Grado mínimo t = 3
+
+@app.route("/")
+def inicio():
+    lugares = arbol.obtener_lugares()
+    departamentos = sorted(set(l.departamento for l in lugares))
+    depto_filtrado = request.args.get("departamento")
+    calificar_lugar = request.args.get("calificar")  # <<--- nuevo
+
+    lugares_filtrados = [l for l in lugares if l.departamento == depto_filtrado] if depto_filtrado else []
+    generar_mapa(lugares_filtrados if depto_filtrado else [])
+    
+    return render_template(
+        "inicio.html",
+        lugares=lugares_filtrados,
+        departamentos=departamentos,
+        calificar=calificar_lugar  # <<--- lo mandamos al template
+    )
+
+
+@app.route("/recomendar", methods=["POST"])
+def recomendar():
+    global rutas
+    origen = request.form["origen"].strip()
+    presupuesto = float(request.form["presupuesto"])
+    horas = float(request.form["horas"])
+    rutas = recomendar_rutas(grafo, origen, presupuesto, horas)
+    generar_mapa([], grafo=grafo, origen_nombre=origen)  # Mapa limpio, sin ruta aún
+    return render_template("inicio.html", lugares=[], departamentos=[], rutas=rutas)
+
+
+@app.route("/insertar", methods=["GET", "POST"])
+def insertar():
+    if request.method == "POST":
+            nombre = request.form["nombre"]
+            depto = request.form["departamento"]
+            calif = float(request.form["calificacion"])
+            costo = float(request.form["costo"])
+            tiempo = float(request.form["tiempo"])
+            lat = float(request.form["latitud"])
+            lon = float(request.form["longitud"])
+            lugar = Lugar(nombre, depto, calif, costo, tiempo, lat, lon)
+            arbol.insertar(lugar)
+            grafo.agregar_lugar(lugar.nombre, lugar)
+            guardar_grafo(grafo, ARCHIVO_GRAFO)
+            guardar_arbol(arbol, ARCHIVO_ARBOL)
+            return redirect("/insertar")
+    return render_template("insertar.html")
+
+@app.route("/cargar_csv", methods=["POST"])
+def cargar():
+    archivo = request.files["archivo"]
+    if archivo:
+        path = os.path.join(app.config["UPLOAD_FOLDER"], archivo.filename)
+        archivo.save(path)
+        lugares = cargar_csv(path)
+        for lugar in lugares:
+            arbol.insertar(lugar)
+            grafo.agregar_lugar(lugar.nombre, lugar)
+        guardar_grafo(grafo, ARCHIVO_GRAFO)
+        guardar_arbol(arbol, ARCHIVO_ARBOL)
+    return redirect("/cargar_descargar")
+
+@app.route("/descargar_csv")
+def descargar():
+    path = os.path.join(app.config["UPLOAD_FOLDER"], "lugares_exportados.csv")
+    exportar_csv(arbol.obtener_lugares(), path)
+    return send_file(path, as_attachment=True)
+
+@app.route("/cargar_conexiones", methods=["POST"])
+def cargar_conexiones_csv():
+    archivo = request.files["archivo_conexiones"]
+    if archivo:
+        path = os.path.join(app.config["UPLOAD_FOLDER"], archivo.filename)
+        os.makedirs(app.config["UPLOAD_FOLDER"], exist_ok=True)
+        archivo.save(path)
+        cargar_conexiones(path, grafo)
+        guardar_grafo(grafo, ARCHIVO_GRAFO)
+    return redirect("/cargar_descargar")
+
+@app.route("/cargar_descargar")
+def cargar_descargar():
+    return render_template("cargar_descargar.html")
+
+@app.route("/reset")
+def reset():
+    global arbol, grafo
+    try:
+        os.remove(ARCHIVO_ARBOL)
+    except FileNotFoundError:
+        pass
+    try:
+        os.remove(ARCHIVO_GRAFO)
+    except FileNotFoundError:
+        pass
+
+    arbol = ArbolB(3)
+    grafo = Grafo()
+
+    return redirect("/")
+
+@app.route("/mostrar_ruta")
+def mostrar_ruta():
+    ruta_id = int(request.args.get("ruta_id", 0))
+    if 0 <= ruta_id < len(rutas):
+        secuencia = rutas[ruta_id]
+        lugares_ruta = [grafo.nodos[n].lugar for n in secuencia if n in grafo.nodos]
+        generar_mapa(lugares_ruta, grafo=grafo, origen_nombre=secuencia[0])
+        return render_template("inicio.html", lugares=lugares_ruta, departamentos=[], rutas=rutas)
+    return redirect("/")
+
+
+@app.route("/calificar", methods=["POST"])
+def calificar():
+    nombre = request.form["nombre"]
+    nueva = float(request.form["calificacion"])
+
+    if nombre in grafo.nodos:
+        lugar = grafo.nodos[nombre].lugar
+
+        # Si ya tiene votos anteriores, actualizamos promedio
+        if hasattr(lugar, "votos"):
+            lugar.calificacion = round(((lugar.calificacion * lugar.votos) + nueva) / (lugar.votos + 1), 2)
+            lugar.votos += 1
+        else:
+            lugar.votos = 1
+            lugar.calificacion = nueva
+
+        # Guardamos cambios
+        guardar_arbol(arbol, ARCHIVO_ARBOL)
+        guardar_grafo(grafo, ARCHIVO_GRAFO)
+
+    return redirect("/")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
