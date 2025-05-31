@@ -1,4 +1,4 @@
-Planificador de Rutas Turísticas - Guatemala
+/************************************ PLANIFICADOR RUTAS TURISTICAS ********************************/
 
 Aplicación web desarrollada con Python y Flask que permite generar rutas turísticas personalizadas dentro de Guatemala, según el presupuesto, horas disponibles y lugar de inicio del usuario.
 
@@ -15,7 +15,9 @@ Aplicación web desarrollada con Python y Flask que permite generar rutas turís
 - Permite cargar/exportar lugares desde archivos CSV.
 - Visualiza el Árbol B y las conexiones como grafo.
 
-Instalación y ejecución
+/*************************************************** INSTALACIÓN Y EJECUCIÓN ******************************************/
+
+
 
 1. Requisitos
 
@@ -42,7 +44,8 @@ Una vez iniciado el servidor, abrí tu navegador y entra a:
 
    http://127.0.0.1:5000/
 
-Cómo usar la plataforma
+/****************************************************** CÓMO USAR *******************************************************/
+
 
 Buscar rutas
 1. Ingresá tu presupuesto, número de horas disponibles y nombre exacto del lugar de inicio.
@@ -61,7 +64,7 @@ Cargar/descargar CSV
 - Descargar CSV: exportá la información actual.
 - Ver Árbol B: descarga una imagen con la estructura del Árbol B y sus conexiones.
 
-Estructura del proyecto (módulos principales)
+/********************************** ESTRUCTURA DEL PROYECTO (MODULOS PRINCIPALES) ***************************************/
 
 - app.py: Controlador principal del sistema y rutas Flask.
 - arbol_b.py: Implementación del Árbol B para los lugares.
@@ -70,7 +73,7 @@ Estructura del proyecto (módulos principales)
 - recomendador.py: Algoritmo que genera las rutas turísticas.
 - /templates/: HTMLs que componen la interfaz.
 
-Tecnologías utilizadas
+/************************************************** TECNOLOGÍAS UTILIZADAS ************************************************/
 
 - Python + Flask
 - Pandas (procesamiento de CSV)
@@ -78,11 +81,21 @@ Tecnologías utilizadas
 - HTML + CSS (interfaz)
 - Árbol B y Grafos implementados desde cero
 
-Desarrollado por
+/******************************************************* DESARROLLADO POR **************************************************/
 
 Estudiantes de la Universidad Mariano Gálvez
 Proyecto final de Programación III – Sección B
 
-- Edilson Enrique Villeda García
-- Dayna Marianne Meza Maltez
-- Luis Samuel Menchú Tun
+Nombre: Dayna Marianne Meza Maltez
+Carnet:	9490-23-3808
+
+Nombre: Edilson Enrique García Villeda
+Carnet:	9490-23-2637
+
+Nombre: Luis Samuel Menchú Tun 
+Carnet: 9490-23-6285
+
+***** PARTICIPACIÓN DE CADA MIEMBRO ****
+Dayna Meza 	--> 	100%
+Edilson García 	--> 	100%
+Luis Samuel --> 100%
