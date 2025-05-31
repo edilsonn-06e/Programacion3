@@ -98,4 +98,4 @@ Carnet: 9490-23-6285
 ***** PARTICIPACIÓN DE CADA MIEMBRO ****
 Dayna Meza 	--> 	100%
 Edilson García 	--> 	100%
-Luis Samuel --> 100%
+Luis Samuel -->   100%
