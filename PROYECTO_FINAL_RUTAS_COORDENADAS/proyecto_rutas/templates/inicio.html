@@ -1,0 +1,136 @@
+
+<!-- ACÁ HEREDO EL ESTILO DESDE LAYOUT PARA QUE TAMBIEN SE APLIQUE AQUI -->
+{% extends "layout.html" %} 
+{% block content %}
+<h2 class="mb-4">Buscar Rutas Recomendadas</h2>
+
+<!--ES EL FORMULARIO DONDE BUSCAMOS PARA QUE NOS RECOMIENDE, LLAMA EL METODO Y TODO ACÁ-->
+<form method="POST" action="/recomendar" class="row g-3 mb-4">
+    <div class="col-md-4">
+        <label class="form-label">Lugar de partida</label>
+        <input type="text" name="origen" class="form-control" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Presupuesto (Q)</label>
+        <input type="number" step="0.01" name="presupuesto" class="form-control" required>
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Horas disponibles</label>
+        <input type="number" step="0.1" name="horas" class="form-control" required>
+    </div>
+    <div class="col-12 text-end">
+        <button type="submit" class="btn btn-primary px-4">Buscar</button>
+    </div>
+</form>
+
+<!--ACÁ MUESTRA LA LISTA DE DEPARTAMENTOS PARA FILTRAR Y FILTRA CON EL FOR-->
+<h3 class="mb-3">Filtrar por Departamento</h3>
+<form method="GET" action="/" class="row g-3 align-items-end mb-4">
+    <div class="col-md-6">
+        <label class="form-label">Departamento</label>
+        <select name="departamento" class="form-select">
+            {% for depto in departamentos %}
+            <option value="{{ depto }}">{{ depto }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="col-md-6 text-end">
+        <button type="submit" class="btn btn-secondary px-4">Filtrar</button>
+    </div>
+</form>
+
+<!--MUESTRA LOS LUGARES QUE HAY DESPUES DE APLICAR EL FILTRO-->
+<h3 class="mb-3">Lugares sugeridos</h3>
+<ul class="list-group mb-4">
+    {% for l in lugares %}
+        <li class="list-group-item">
+            <strong>{{ l.nombre }}</strong> ({{ l.departamento }})<br>
+            Q{{ l.costo }} – {{ l.tiempo }} hrs – Calificación: {{ l.calificacion }}/5
+        </li>
+    {% endfor %}
+</ul>
+
+<!--MUESTRA LAS RUTAS DISPONIBLES QUE HAY-->
+{% if rutas %}
+    <h3 class="mb-3" style="color: #C2185B;">Rutas sugeridas</h3>
+    <ul class="list-group mb-4">
+        {% for i in range(rutas|length) %}
+        <li class="list-group-item d-flex flex-column align-items-start">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <strong>Ruta {{ i + 1 }}:</strong>
+                <form action="/mostrar_ruta" method="GET" class="mb-0">
+                    <input type="hidden" name="ruta_id" value="{{ i }}">
+                    <button type="submit" class="btn btn-outline-primary btn-sm">Ver Ruta {{ i + 1 }}</button>
+                </form>
+            </div>
+            <div class="mt-1 text-muted">
+                <em>Criterio: {{ criterios[i] if criterios and i < criterios|length else 'No definido' }}</em>
+            </div>
+            <div>{{ rutas[i]|join(" → ") }}</div>
+        </li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+
+
+<!--MUESTRA EL MAPA-->
+<h3 class="mb-3">Mapa</h3>
+<div class="border rounded shadow-sm overflow-hidden mb-4" style="height: 500px;">
+    <iframe src="{{ url_for('static', filename='mapa.html') }}" width="100%" height="100%" style="border:0;"></iframe>
+</div>
+
+<!--MUESTRA EL MODAL DONDE SALE LA CALIFICACION Y EL BOTONCITO PARA VALORAR-->
+<div class="modal fade" id="modalCalificacion" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form method="POST" action="/calificar" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Calificar lugar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" name="nombre" id="lugarNombre">
+
+        <label for="calificacion" class="form-label">Tu calificación (1 a 5):</label>
+        <input type="number" name="calificacion" min="1" max="5" step="0.5" required class="form-control mb-3">
+
+        <label for="comentario" class="form-label">Comentario (opcional):</label>
+        <textarea name="comentario" id="comentario" class="form-control" rows="3" placeholder="¿Qué te pareció este lugar?"></textarea>
+
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!--ESTE ES EL QUE NOS MUESTRA LA VENTANA DONDE CALIFICAMOS Y DEJAMOS LOS COMENTARIOS-->
+<script>
+  function abrirCalificacion(nombre) {
+    const inputNombre = document.getElementById("lugarNombre");
+    inputNombre.value = nombre;
+
+    const modal = new bootstrap.Modal(document.getElementById('modalCalificacion'));
+    modal.show();
+  }
+</script>
+
+
+
+{% if calificar %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const inputNombre = document.getElementById("lugarNombre");
+    inputNombre.value = "{{ calificar }}";
+
+    const modal = new bootstrap.Modal(document.getElementById('modalCalificacion'));
+    modal.show();
+  });
+</script>
+{% endif %}
+
+
+
+{% endblock %}

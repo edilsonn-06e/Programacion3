@@ -1,0 +1,251 @@
+origen,destino,distancia,tiempo
+Lugar 1 (Petén),Lugar 5 (Petén),20,1.4
+Lugar 1 (Petén),Lugar 6 (Petén),12,1.0
+Lugar 1 (Petén),Lugar 8 (Petén),31,1.8
+Lugar 1 (Petén),Lugar 9 (Petén),26,2.0
+Lugar 2 (Petén),Lugar 5 (Petén),33,1.2
+Lugar 2 (Petén),Lugar 6 (Petén),24,2.5
+Lugar 2 (Petén),Lugar 8 (Petén),42,1.2
+Lugar 2 (Petén),Lugar 10 (Petén),7,1.5
+Lugar 3 (Petén),Lugar 6 (Petén),49,2.4
+Lugar 3 (Petén),Lugar 8 (Petén),27,2.4
+Lugar 4 (Petén),Lugar 5 (Petén),21,1.0
+Lugar 4 (Petén),Lugar 6 (Petén),11,1.3
+Lugar 4 (Petén),Lugar 7 (Petén),30,1.2
+Lugar 4 (Petén),Lugar 9 (Petén),27,0.6
+Lugar 5 (Petén),Lugar 6 (Petén),35,2.3
+Lugar 5 (Petén),Lugar 8 (Petén),9,2.3
+Lugar 5 (Petén),Lugar 9 (Petén),12,1.6
+Lugar 6 (Petén),Lugar 7 (Petén),48,1.0
+Lugar 6 (Petén),Lugar 10 (Petén),47,2.1
+Lugar 7 (Petén),Lugar 8 (Petén),48,0.5
+Lugar 7 (Petén),Lugar 10 (Petén),32,0.6
+Lugar 8 (Petén),Lugar 10 (Petén),7,1.1
+PARQUE FITZI (Petén),Lugar 1 (Petén),45,1.3 
+Lugar 1 (Izabal),Lugar 2 (Izabal),19,2.3
+Lugar 1 (Izabal),Lugar 4 (Izabal),43,0.5
+Lugar 1 (Izabal),Lugar 9 (Izabal),30,2.0
+Lugar 2 (Izabal),Lugar 5 (Izabal),6,1.3
+Lugar 2 (Izabal),Lugar 8 (Izabal),31,1.5
+Lugar 2 (Izabal),Lugar 9 (Izabal),18,1.5
+Lugar 2 (Izabal),Lugar 10 (Izabal),9,0.8
+Lugar 3 (Izabal),Lugar 4 (Izabal),38,0.8
+Lugar 3 (Izabal),Lugar 5 (Izabal),46,2.2
+Lugar 3 (Izabal),Lugar 6 (Izabal),11,0.6
+Lugar 3 (Izabal),Lugar 7 (Izabal),15,1.1
+Lugar 3 (Izabal),Lugar 8 (Izabal),28,1.1
+Lugar 3 (Izabal),Lugar 9 (Izabal),8,1.3
+Lugar 4 (Izabal),Lugar 5 (Izabal),49,2.4
+Lugar 5 (Izabal),Lugar 6 (Izabal),23,1.6
+Lugar 5 (Izabal),Lugar 8 (Izabal),14,2.1
+Lugar 5 (Izabal),Lugar 9 (Izabal),13,1.7
+Lugar 5 (Izabal),Lugar 10 (Izabal),6,0.7
+Lugar 6 (Izabal),Lugar 9 (Izabal),23,2.4
+Lugar 7 (Izabal),Lugar 8 (Izabal),46,2.1
+Lugar 7 (Izabal),Lugar 10 (Izabal),40,1.7
+Lugar 1 (Huehuetenango),Lugar 2 (Huehuetenango),14,0.6
+Lugar 1 (Huehuetenango),Lugar 4 (Huehuetenango),22,0.5
+Lugar 1 (Huehuetenango),Lugar 5 (Huehuetenango),30,1.2
+Lugar 1 (Huehuetenango),Lugar 6 (Huehuetenango),35,0.8
+Lugar 2 (Huehuetenango),Lugar 3 (Huehuetenango),29,1.3
+Lugar 2 (Huehuetenango),Lugar 5 (Huehuetenango),22,1.4
+Lugar 2 (Huehuetenango),Lugar 6 (Huehuetenango),22,1.1
+Lugar 2 (Huehuetenango),Lugar 8 (Huehuetenango),35,1.6
+Lugar 2 (Huehuetenango),Lugar 9 (Huehuetenango),32,1.0
+Lugar 2 (Huehuetenango),Lugar 10 (Huehuetenango),50,0.8
+Lugar 3 (Huehuetenango),Lugar 6 (Huehuetenango),44,2.0
+Lugar 3 (Huehuetenango),Lugar 8 (Huehuetenango),29,0.8
+Lugar 3 (Huehuetenango),Lugar 9 (Huehuetenango),32,1.0
+Lugar 4 (Huehuetenango),Lugar 5 (Huehuetenango),10,1.0
+Lugar 4 (Huehuetenango),Lugar 6 (Huehuetenango),32,1.2
+Lugar 4 (Huehuetenango),Lugar 7 (Huehuetenango),15,2.1
+Lugar 4 (Huehuetenango),Lugar 10 (Huehuetenango),33,1.5
+Lugar 5 (Huehuetenango),Lugar 9 (Huehuetenango),9,0.6
+Lugar 5 (Huehuetenango),Lugar 10 (Huehuetenango),27,0.5
+Lugar 6 (Huehuetenango),Lugar 7 (Huehuetenango),19,1.1
+Lugar 6 (Huehuetenango),Lugar 8 (Huehuetenango),18,1.2
+Lugar 7 (Huehuetenango),Lugar 8 (Huehuetenango),11,2.2
+Lugar 7 (Huehuetenango),Lugar 9 (Huehuetenango),6,1.3
+Lugar 7 (Huehuetenango),Lugar 10 (Huehuetenango),6,1.9
+Lugar 8 (Huehuetenango),Lugar 9 (Huehuetenango),37,2.5
+Lugar 9 (Huehuetenango),Lugar 10 (Huehuetenango),7,2.3
+Lugar 1 (Guatemala),Lugar 2 (Guatemala),14,0.6
+Lugar 1 (Guatemala),Lugar 3 (Guatemala),45,1.2
+Lugar 1 (Guatemala),Lugar 6 (Guatemala),14,2.0
+Lugar 1 (Guatemala),Lugar 9 (Guatemala),29,1.6
+Lugar 2 (Guatemala),Lugar 4 (Guatemala),15,2.0
+Lugar 2 (Guatemala),Lugar 5 (Guatemala),33,1.8
+Lugar 2 (Guatemala),Lugar 8 (Guatemala),39,1.7
+Lugar 3 (Guatemala),Lugar 6 (Guatemala),30,1.6
+Lugar 3 (Guatemala),Lugar 8 (Guatemala),23,0.8
+Lugar 3 (Guatemala),Lugar 9 (Guatemala),35,1.7
+Lugar 3 (Guatemala),Lugar 10 (Guatemala),27,1.8
+Lugar 4 (Guatemala),Lugar 5 (Guatemala),36,1.0
+Lugar 4 (Guatemala),Lugar 6 (Guatemala),23,1.3
+Lugar 4 (Guatemala),Lugar 7 (Guatemala),22,1.4
+Lugar 5 (Guatemala),Lugar 10 (Guatemala),8,2.2
+Lugar 6 (Guatemala),Lugar 9 (Guatemala),42,1.5
+Lugar 8 (Guatemala),Lugar 10 (Guatemala),19,1.6
+Lugar 1 (Quetzaltenango),Lugar 3 (Quetzaltenango),13,1.7
+Lugar 1 (Quetzaltenango),Lugar 8 (Quetzaltenango),26,1.5
+Lugar 1 (Quetzaltenango),Lugar 9 (Quetzaltenango),11,1.4
+Lugar 2 (Quetzaltenango),Lugar 3 (Quetzaltenango),48,0.7
+Lugar 2 (Quetzaltenango),Lugar 4 (Quetzaltenango),7,0.8
+Lugar 2 (Quetzaltenango),Lugar 5 (Quetzaltenango),40,2.1
+Lugar 2 (Quetzaltenango),Lugar 7 (Quetzaltenango),49,1.9
+Lugar 2 (Quetzaltenango),Lugar 8 (Quetzaltenango),16,2.4
+Lugar 3 (Quetzaltenango),Lugar 6 (Quetzaltenango),45,1.3
+Lugar 3 (Quetzaltenango),Lugar 7 (Quetzaltenango),32,2.3
+Lugar 3 (Quetzaltenango),Lugar 9 (Quetzaltenango),41,1.2
+Lugar 3 (Quetzaltenango),Lugar 10 (Quetzaltenango),6,1.6
+Lugar 4 (Quetzaltenango),Lugar 6 (Quetzaltenango),30,0.6
+Lugar 4 (Quetzaltenango),Lugar 8 (Quetzaltenango),43,1.0
+Lugar 4 (Quetzaltenango),Lugar 9 (Quetzaltenango),29,1.1
+Lugar 4 (Quetzaltenango),Lugar 10 (Quetzaltenango),50,0.5
+Lugar 5 (Quetzaltenango),Lugar 6 (Quetzaltenango),37,2.3
+Lugar 5 (Quetzaltenango),Lugar 7 (Quetzaltenango),37,1.7
+Lugar 5 (Quetzaltenango),Lugar 8 (Quetzaltenango),37,1.3
+Lugar 6 (Quetzaltenango),Lugar 7 (Quetzaltenango),19,1.7
+Lugar 6 (Quetzaltenango),Lugar 8 (Quetzaltenango),15,1.1
+Lugar 7 (Quetzaltenango),Lugar 8 (Quetzaltenango),21,2.1
+Lugar 8 (Quetzaltenango),Lugar 9 (Quetzaltenango),11,2.3
+Lugar 8 (Quetzaltenango),Lugar 10 (Quetzaltenango),18,1.3
+Lugar 9 (Quetzaltenango),Lugar 10 (Quetzaltenango),22,2.3
+Lugar 1 (Alta Verapaz),Lugar 3 (Alta Verapaz),16,1.8
+Lugar 1 (Alta Verapaz),Lugar 5 (Alta Verapaz),42,0.7
+Lugar 1 (Alta Verapaz),Lugar 7 (Alta Verapaz),37,0.9
+Lugar 1 (Alta Verapaz),Lugar 8 (Alta Verapaz),20,1.5
+Lugar 1 (Alta Verapaz),Lugar 9 (Alta Verapaz),24,2.3
+Lugar 2 (Alta Verapaz),Lugar 5 (Alta Verapaz),23,1.1
+Lugar 2 (Alta Verapaz),Lugar 7 (Alta Verapaz),29,0.9
+Lugar 2 (Alta Verapaz),Lugar 9 (Alta Verapaz),28,1.6
+Lugar 3 (Alta Verapaz),Lugar 5 (Alta Verapaz),10,2.1
+Lugar 3 (Alta Verapaz),Lugar 6 (Alta Verapaz),46,2.0
+Lugar 3 (Alta Verapaz),Lugar 9 (Alta Verapaz),37,0.7
+Lugar 4 (Alta Verapaz),Lugar 6 (Alta Verapaz),14,0.6
+Lugar 4 (Alta Verapaz),Lugar 7 (Alta Verapaz),20,1.3
+Lugar 4 (Alta Verapaz),Lugar 8 (Alta Verapaz),25,2.1
+Lugar 4 (Alta Verapaz),Lugar 9 (Alta Verapaz),26,2.1
+Lugar 4 (Alta Verapaz),Lugar 10 (Alta Verapaz),50,1.1
+Lugar 6 (Alta Verapaz),Lugar 7 (Alta Verapaz),39,1.5
+Lugar 6 (Alta Verapaz),Lugar 10 (Alta Verapaz),26,1.5
+Lugar 8 (Alta Verapaz),Lugar 9 (Alta Verapaz),9,1.1
+Lugar 8 (Alta Verapaz),Lugar 10 (Alta Verapaz),36,0.6
+Lugar 1 (Zacapa),Lugar 7 (Zacapa),49,1.9
+Lugar 1 (Zacapa),Lugar 8 (Zacapa),45,2.1
+Lugar 2 (Zacapa),Lugar 5 (Zacapa),49,1.8
+Lugar 2 (Zacapa),Lugar 7 (Zacapa),36,1.1
+Lugar 2 (Zacapa),Lugar 8 (Zacapa),8,2.5
+Lugar 2 (Zacapa),Lugar 10 (Zacapa),27,2.2
+Lugar 3 (Zacapa),Lugar 4 (Zacapa),48,1.4
+Lugar 3 (Zacapa),Lugar 5 (Zacapa),29,1.3
+Lugar 3 (Zacapa),Lugar 6 (Zacapa),15,0.5
+Lugar 4 (Zacapa),Lugar 5 (Zacapa),16,0.9
+Lugar 4 (Zacapa),Lugar 6 (Zacapa),48,2.0
+Lugar 4 (Zacapa),Lugar 8 (Zacapa),43,2.3
+Lugar 4 (Zacapa),Lugar 9 (Zacapa),45,2.0
+Lugar 4 (Zacapa),Lugar 10 (Zacapa),44,1.8
+Lugar 5 (Zacapa),Lugar 6 (Zacapa),15,2.1
+Lugar 5 (Zacapa),Lugar 10 (Zacapa),31,2.3
+Lugar 6 (Zacapa),Lugar 9 (Zacapa),31,2.0
+Lugar 6 (Zacapa),Lugar 10 (Zacapa),24,2.0
+Lugar 7 (Zacapa),Lugar 9 (Zacapa),5,2.5
+Lugar 7 (Zacapa),Lugar 10 (Zacapa),15,0.9
+Lugar 1 (Chiquimula),Lugar 2 (Chiquimula),15,2.1
+Lugar 1 (Chiquimula),Lugar 8 (Chiquimula),20,1.4
+Lugar 1 (Chiquimula),Lugar 9 (Chiquimula),24,1.0
+Lugar 1 (Chiquimula),Lugar 10 (Chiquimula),18,2.5
+Lugar 2 (Chiquimula),Lugar 3 (Chiquimula),17,0.7
+Lugar 2 (Chiquimula),Lugar 4 (Chiquimula),39,1.8
+Lugar 2 (Chiquimula),Lugar 5 (Chiquimula),39,2.1
+Lugar 2 (Chiquimula),Lugar 7 (Chiquimula),17,1.7
+Lugar 2 (Chiquimula),Lugar 8 (Chiquimula),46,0.8
+Lugar 3 (Chiquimula),Lugar 8 (Chiquimula),41,2.2
+Lugar 3 (Chiquimula),Lugar 9 (Chiquimula),30,1.6
+Lugar 4 (Chiquimula),Lugar 5 (Chiquimula),44,1.2
+Lugar 4 (Chiquimula),Lugar 6 (Chiquimula),6,1.8
+Lugar 4 (Chiquimula),Lugar 10 (Chiquimula),47,2.3
+Lugar 5 (Chiquimula),Lugar 6 (Chiquimula),50,2.4
+Lugar 5 (Chiquimula),Lugar 9 (Chiquimula),45,1.4
+Lugar 6 (Chiquimula),Lugar 8 (Chiquimula),24,1.7
+Lugar 7 (Chiquimula),Lugar 8 (Chiquimula),27,0.8
+Lugar 7 (Chiquimula),Lugar 9 (Chiquimula),44,1.0
+Lugar 8 (Chiquimula),Lugar 9 (Chiquimula),8,1.4
+Lugar 9 (Chiquimula),Lugar 10 (Chiquimula),33,0.6
+Lugar 1 (Jalapa),Lugar 2 (Jalapa),45,1.9
+Lugar 1 (Jalapa),Lugar 5 (Jalapa),29,0.7
+Lugar 3 (Jalapa),Lugar 7 (Jalapa),21,1.5
+Lugar 3 (Jalapa),Lugar 9 (Jalapa),12,2.0
+Lugar 4 (Jalapa),Lugar 7 (Jalapa),46,1.9
+Lugar 4 (Jalapa),Lugar 9 (Jalapa),28,0.7
+Lugar 5 (Jalapa),Lugar 6 (Jalapa),11,2.3
+Lugar 5 (Jalapa),Lugar 7 (Jalapa),35,1.3
+Lugar 5 (Jalapa),Lugar 10 (Jalapa),46,1.3
+Lugar 6 (Jalapa),Lugar 10 (Jalapa),33,1.8
+Lugar 7 (Jalapa),Lugar 8 (Jalapa),29,0.8
+Lugar 9 (Jalapa),Lugar 10 (Jalapa),6,1.6
+Lugar 1 (Sololá),Lugar 5 (Sololá),11,2.1
+Lugar 2 (Sololá),Lugar 3 (Sololá),12,1.3
+Lugar 2 (Sololá),Lugar 4 (Sololá),15,1.8
+Lugar 2 (Sololá),Lugar 7 (Sololá),29,1.0
+Lugar 3 (Sololá),Lugar 4 (Sololá),12,1.7
+Lugar 3 (Sololá),Lugar 5 (Sololá),47,0.9
+Lugar 3 (Sololá),Lugar 9 (Sololá),5,0.5
+Lugar 3 (Sololá),Lugar 10 (Sololá),11,2.0
+Lugar 4 (Sololá),Lugar 6 (Sololá),16,2.2
+Lugar 4 (Sololá),Lugar 7 (Sololá),48,2.5
+Lugar 5 (Sololá),Lugar 6 (Sololá),42,2.5
+Lugar 5 (Sololá),Lugar 9 (Sololá),43,2.1
+Lugar 6 (Sololá),Lugar 7 (Sololá),7,1.2
+Lugar 6 (Sololá),Lugar 9 (Sololá),33,1.4
+Lugar 7 (Sololá),Lugar 9 (Sololá),33,1.1
+Lugar 3 (Jalapa),Lugar 8 (Sololá),57,1.5
+Lugar 6 (Guatemala),Lugar 3 (Zacapa),76,2.3
+Lugar 9 (Izabal),Lugar 3 (Zacapa),93,4.1
+Lugar 1 (Huehuetenango),Lugar 4 (Alta Verapaz),68,2.7
+Lugar 4 (Alta Verapaz),Lugar 2 (Sololá),43,3.3
+Lugar 4 (Izabal),Lugar 3 (Alta Verapaz),74,4.4
+Lugar 5 (Guatemala),Lugar 2 (Sololá),66,2.3
+Lugar 8 (Zacapa),Lugar 8 (Chiquimula),120,2.8
+Lugar 2 (Petén),Lugar 10 (Chiquimula),63,4.5
+Lugar 8 (Chiquimula),Lugar 9 (Petén),144,3.0
+Lugar 10 (Zacapa),Lugar 4 (Jalapa),40,3.0
+Lugar 2 (Jalapa),Lugar 5 (Quetzaltenango),117,2.8
+Lugar 1 (Sololá),Lugar 3 (Chiquimula),40,4.4
+Lugar 4 (Quetzaltenango),Lugar 1 (Alta Verapaz),92,3.2
+Lugar 5 (Petén),Lugar 10 (Zacapa),144,3.4
+Lugar 1 (Guatemala),Lugar 3 (Huehuetenango),122,4.0
+Lugar 6 (Chiquimula),Lugar 3 (Guatemala),76,2.8
+Lugar 3 (Chiquimula),Lugar 3 (Zacapa),95,4.9
+Lugar 2 (Alta Verapaz),Lugar 10 (Jalapa),89,2.3
+Lugar 1 (Izabal),Lugar 8 (Guatemala),57,3.5
+Lugar 5 (Alta Verapaz),Lugar 4 (Jalapa),69,2.7
+Lugar 6 (Zacapa),Lugar 4 (Jalapa),148,2.1
+Lugar 6 (Zacapa),Lugar 9 (Guatemala),96,2.7
+Lugar 3 (Zacapa),Lugar 2 (Quetzaltenango),126,3.4
+Lugar 9 (Izabal),Lugar 3 (Zacapa),119,4.4
+Lugar 9 (Chiquimula),Lugar 1 (Zacapa),70,3.3
+Lugar 3 (Alta Verapaz),Lugar 5 (Huehuetenango),144,4.1
+Lugar 2 (Chiquimula),Lugar 8 (Izabal),90,2.2
+Lugar 4 (Izabal),Lugar 5 (Alta Verapaz),36,2.9
+Lugar 8 (Jalapa),Lugar 3 (Quetzaltenango),80,2.5
+Lugar 4 (Alta Verapaz),Lugar 5 (Petén),38,2.5
+Lugar 1 (Chiquimula),Lugar 7 (Quetzaltenango),59,4.0
+Lugar 7 (Sololá),Lugar 8 (Guatemala),115,3.5
+Lugar 10 (Guatemala),Lugar 4 (Zacapa),147,1.9
+Lugar 4 (Petén),Lugar 4 (Jalapa),132,4.6
+Lugar 4 (Sololá),Lugar 2 (Jalapa),32,1.9
+Lugar 1 (Izabal),Lugar 9 (Chiquimula),97,1.7
+Lugar 2 (Chiquimula),Lugar 5 (Quetzaltenango),104,2.7
+Lugar 9 (Alta Verapaz),Lugar 3 (Zacapa),49,2.3
+Lugar 2 (Guatemala),Lugar 3 (Sololá),91,1.9
+Lugar 9 (Huehuetenango),Lugar 10 (Guatemala),144,4.1
+Lugar 4 (Jalapa),Lugar 2 (Huehuetenango),62,2.7
+Lugar 6 (Alta Verapaz),Lugar 8 (Petén),87,4.7
+Lugar 8 (Alta Verapaz),Lugar 9 (Izabal),31,2.1
+Lugar 4 (Chiquimula),Lugar 4 (Huehuetenango),63,4.9
+Lugar 3 (Izabal),Lugar 3 (Huehuetenango),132,4.4
+Lugar 5 (Huehuetenango),Lugar 3 (Alta Verapaz),31,4.6
+Lugar 8 (Chiquimula),Lugar 3 (Petén),80,4.9
+Lugar 9 (Alta Verapaz),Lugar 9 (Zacapa),136,4.5
+Lugar 6 (Sololá),Lugar 1 (Huehuetenango),136,3.2
